@@ -1,0 +1,24 @@
+$(document).ready(function(){
+	$("#nav-one li").hover(
+		function(){ $("ul", this).fadeIn("fast"); }, 
+		function() { } 
+	);
+	if (document.all) {
+		$("#nav-one li").hoverClass ("sfHover");
+	}
+});
+
+$.fn.hoverClass = function(c) {
+	return this.each(function(){
+		$(this).hover( 
+			function() { $(this).addClass(c);  },
+			function() { $(this).removeClass(c); }
+		);
+	});
+};	
+/* 
+Code Highlighting 
+Courtesy of Dean Edwards star-light 
+http://dean.edwards.name/my/behaviors/#star-light.htc
+	- with jQuery methods added, of course
+*/
